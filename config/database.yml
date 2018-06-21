@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *default
+  database: moodynote_development
+  host: localhost
+
+test:
+  <<: *default
+  database: moodynote_test
+  host: localhost
+
+production:
+  <<: *default
+  database: moodynote_production
