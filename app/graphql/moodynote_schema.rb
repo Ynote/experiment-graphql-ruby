@@ -1,5 +1,5 @@
 MoodynoteSchema = GraphQL::Schema.define do
   # Queries
-  mutation Types::MutationType
+  mutation MutationType
   query QueryType
 end

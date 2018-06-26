@@ -1,11 +1,7 @@
-Types::MutationType = GraphQL::ObjectType.define do
-  name "Mutation"
+MutationType = GraphQL::ObjectType.define do
+  name 'Mutation'
+  description 'The mutation root'
 
-  # TODO: Remove me
-  field :testField, types.String do
-    description "An example field added by the generator"
-    resolve ->(obj, args, ctx) {
-      "Hello World!"
-    }
-  end
+  field :rateCreate, function: RateCreateMutation.new
+  field :metricCreate, function: MetricCreateMutation.new
 end
