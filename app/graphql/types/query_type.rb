@@ -5,4 +5,5 @@ QueryType = GraphQL::ObjectType.define do
   field :rate, function: RateQuery.new
   connection :rates, function: RatesQuery.new
   field :metric, function: MetricQuery.new
+  connection :metrics, function: MetricsQuery.new
 end
