@@ -14,5 +14,6 @@ module Moodynote
     # Custom directories
     config.autoload_paths << "#{config.root}/app/graphql/queries"
     config.autoload_paths << "#{config.root}/app/graphql/types"
+    config.autoload_paths << "#{config.root}/app/graphql/scalars"
   end
 end
