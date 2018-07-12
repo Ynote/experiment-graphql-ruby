@@ -1,0 +1,59 @@
+<canvas id="myChart" width="400" height="400"></canvas>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js">
+</script>
+<script>
+  var query = "query {\n" +
+  "    rates {\n" +
+  "     edges {\n" +
+  "       node {\n" +
+  "         uuid\n" +
+  "         value\n" +
+  "         createdAt\n" +
+  "         metric {\n" +
+  "           label\n" +
+  "           scale\n" +
+  "         }\n" +
+  "       }\n" +
+  "     }\n" +
+  "   }\n" +
+  " }"
+
+var config = {
+  headers: {
+    'Content-Type': 'application/json',
+    'X-CSRF-Token': document.getElementsByName('csrf-token')[0].content,
+  },
+  credentials: 'same-origin',
+  method: 'POST',
+  body: JSON.stringify({query: query, variables: null})
+}
+
+fetch('/graphql', config)
+  .then(function(res) {
+    res.json().then(function(json) {
+      var ctx = document.getElementById("myChart").getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            datasets: [{
+              label: 'Energy',
+              data: json.data.rates.edges.map(function(edge) {
+                return {
+                  x: new Date(edge.node.createdAt),
+                  y: edge.node.value,
+                }
+              })
+            }]
+          },
+          options: {
+            scales: {
+              xAxes: [{
+                type: 'time',
+              }]
+            }
+          }
+      })
+    })
+  })
+</script>
