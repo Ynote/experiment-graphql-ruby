@@ -1,24 +1,14 @@
-# README
+# Moodynote
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a personnal project to:
+- easily rate a metric through a web application,
+- display charts depending on time and these rates.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+- Ruby 2.3.6
 
-* System dependencies
+## GraphQL
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This app provides a GraphQL endpoint. All queries and mutations are available on
+`/graphiql`.
