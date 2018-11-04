@@ -36,4 +36,4 @@ This app provides a GraphQL endpoint to create metrics and rates in order to dis
 
 ## Credits
 
-Thanks to [@sunny](https://github.com/sunny) to teach me the basics of graphql-ruby.
+Thanks to [@sunny](https://github.com/sunny) for teaching me the basics of graphql-ruby.
