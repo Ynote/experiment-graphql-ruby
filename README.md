@@ -1,3 +1,5 @@
+> This project has moved to https://gitlab.com/ynote_hk/experiment-graphql-ruby.
+
 # Experiment GraphQL Ruby
 
 > Experiment from 2018
